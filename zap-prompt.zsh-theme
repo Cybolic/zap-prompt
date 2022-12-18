@@ -9,6 +9,16 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
+# Set cursor shape depending on Vi mode
+function zle-line-init zle-keymap-select {
+  echo -ne '\e['"${${KEYMAP/vicmd/1}/(main|viins|)/5}"' q'
+}
+local _set_default_cursor() { echo -ne '\e[5 q' ;}
+precmd_functions+=(_set_default_cursor)
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+echo -ne '\e[5 q'
 
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 # 
