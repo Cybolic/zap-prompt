@@ -32,7 +32,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
 
-PROMPT="%B%{$fg[yellow]%}⚡% %(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )%{$fg[cyan]%}%c%{$reset_color%}"
+PROMPT="%B%{$fg[yellow]%}🐸 % %{$fg[cyan]%}%c%(?:%{$fg_bold[green]%} ❯ :%{$fg_bold[red]%} ❯ )%{$reset_color%}"
 PROMPT+="\$vcs_info_msg_0_ "
 
 #vim:set filetype=zsh:syntax=zsh
